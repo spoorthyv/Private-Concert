@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import Foundation
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -36,9 +37,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     var validConfirmPassword = false
     
     override func viewWillAppear(_ animated: Bool) {
-
+        super.viewWillAppear(true)
+        
+        if let email = UserDefaults.standard.string(forKey: "Email") {
+            if let pass = UserDefaults.standard.string(forKey: "Pass") {
+                Auth.auth().signIn(withEmail: email, password: pass, completion: {(user, error) in
+                    self.performSegue(withIdentifier: "enterApp", sender: self)
+                })
+            }
+        }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -181,16 +190,26 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if (isRegister) {
             Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: {(user, error) in
                 if (user != nil) {
+                    UserDefaults.standard.set(self.emailTextField.text!, forKey: "Email")
+                    UserDefaults.standard.set(self.passwordTextField.text!, forKey: "Pass")
+                    
                     self.performSegue(withIdentifier: "enterApp", sender: self)
                 }
             })
         } else {
             Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: {(user, error) in
                 if (user != nil) {
+                    UserDefaults.standard.set(self.emailTextField.text!, forKey: "Email")
+                    UserDefaults.standard.set(self.passwordTextField.text!, forKey: "Pass")
+                    
                     self.performSegue(withIdentifier: "enterApp", sender: self)
                 }
             })
         }
+    }
+    
+    func enterApp() {
+        
     }
     
 
