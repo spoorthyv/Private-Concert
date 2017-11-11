@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OVX-MS-Pkz">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,6 +18,37 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Splash View Controller-->
+        <scene sceneID="Pb4-XY-Yg5">
+            <objects>
+                <viewController id="OVX-MS-Pkz" customClass="SplashViewController" customModule="Private_Concert" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6J4-a9-hCQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashMic" translatesAutoresizingMaskIntoConstraints="NO" id="IXL-tc-8Uz">
+                                <rect key="frame" x="39" y="135" width="297" height="417"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.21176470588235294" green="0.25490196078431371" blue="0.48627450980392156" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="IXL-tc-8Uz" firstAttribute="centerY" secondItem="Nd3-Gv-3FB" secondAttribute="centerY" id="6vT-tQ-wLw"/>
+                            <constraint firstItem="IXL-tc-8Uz" firstAttribute="top" secondItem="Nd3-Gv-3FB" secondAttribute="top" constant="115" id="UBM-9G-ScJ"/>
+                            <constraint firstItem="Nd3-Gv-3FB" firstAttribute="bottom" secondItem="IXL-tc-8Uz" secondAttribute="bottom" constant="115" id="XdT-ua-35X"/>
+                            <constraint firstItem="IXL-tc-8Uz" firstAttribute="leading" secondItem="Nd3-Gv-3FB" secondAttribute="leading" constant="39" id="fFc-Zg-D62"/>
+                            <constraint firstItem="Nd3-Gv-3FB" firstAttribute="trailing" secondItem="IXL-tc-8Uz" secondAttribute="trailing" constant="39" id="kgN-G7-aoJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Nd3-Gv-3FB"/>
+                    </view>
+                    <connections>
+                        <segue destination="Nhm-UH-6KQ" kind="show" identifier="toListenVC" id="YGI-Dn-C8S"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="toLoginVC" id="QeI-I5-gSF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pZG-ip-iBc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="122.40000000000001" y="125.4872563718141"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -209,44 +240,23 @@
                         <outlet property="signInButton" destination="RQR-80-wFd" id="Cgp-v4-h45"/>
                         <outlet property="signInUnderline" destination="tNl-VA-wOG" id="9D8-PN-y7g"/>
                         <outlet property="userIcon" destination="tcK-uI-9vF" id="OmV-8G-5e3"/>
-                        <segue destination="7g0-fy-2vG" kind="show" identifier="enterApp" id="dYa-X7-umK"/>
+                        <segue destination="Nhm-UH-6KQ" kind="show" identifier="enterApp" id="NDU-Fw-R8n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-98.400000000000006" y="118.29085457271366"/>
+            <point key="canvasLocation" x="870" y="126"/>
         </scene>
         <!--Listen View Controller-->
         <scene sceneID="edZ-en-SNT">
             <objects>
-                <viewController id="7g0-fy-2vG" customClass="ListenViewController" customModule="Private_Concert" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListenVC" id="7g0-fy-2vG" customClass="ListenViewController" customModule="Private_Concert" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ErD-gM-s3f">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tabBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfn-rr-yUa">
-                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <items>
-                                    <tabBarItem image="headphones" selectedImage="headphones-selected" id="qCa-VV-bUx">
-                                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-9"/>
-                                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </tabBarItem>
-                                    <tabBarItem tag="1" title="" image="heart" selectedImage="heart-selected" id="vcx-2d-zKN">
-                                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-10"/>
-                                    </tabBarItem>
-                                    <tabBarItem tag="2" title="" image="mic" selectedImage="mic-selected" id="Zmd-zc-4x3">
-                                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-8"/>
-                                    </tabBarItem>
-                                    <tabBarItem tag="3" image="userOutline" selectedImage="userOutline-selected" id="jIh-PC-acK">
-                                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-8"/>
-                                    </tabBarItem>
-                                </items>
-                                <color key="tintColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="barTintColor" red="0.92156862745098034" green="0.72941176470588232" blue="0.086274509803921567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </tabBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="KJv-IJ-o3t">
-                                <rect key="frame" x="0.0" y="40" width="375" height="578"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="68" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="KJv-IJ-o3t">
+                                <rect key="frame" x="0.0" y="40" width="375" height="627"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="listenHeaderCell" rowHeight="68" id="2m5-Fl-oLe">
@@ -383,27 +393,120 @@
                         <constraints>
                             <constraint firstItem="KJv-IJ-o3t" firstAttribute="trailing" secondItem="7nM-0y-Y05" secondAttribute="trailing" id="5lO-83-pgH"/>
                             <constraint firstItem="KJv-IJ-o3t" firstAttribute="leading" secondItem="7nM-0y-Y05" secondAttribute="leading" id="6xt-hU-iG3"/>
-                            <constraint firstItem="KJv-IJ-o3t" firstAttribute="top" secondItem="ErD-gM-s3f" secondAttribute="top" constant="40" id="Wvn-jf-aKq"/>
-                            <constraint firstItem="cfn-rr-yUa" firstAttribute="leading" secondItem="7nM-0y-Y05" secondAttribute="leading" id="b7G-QT-Xzk"/>
-                            <constraint firstAttribute="bottom" secondItem="cfn-rr-yUa" secondAttribute="bottom" id="hlG-fO-kxs"/>
-                            <constraint firstItem="cfn-rr-yUa" firstAttribute="top" secondItem="KJv-IJ-o3t" secondAttribute="bottom" id="nla-M6-8X5"/>
-                            <constraint firstItem="cfn-rr-yUa" firstAttribute="trailing" secondItem="7nM-0y-Y05" secondAttribute="trailing" id="sja-Ur-j4Q"/>
+                            <constraint firstItem="KJv-IJ-o3t" firstAttribute="top" secondItem="7nM-0y-Y05" secondAttribute="top" constant="20" id="p6U-Vd-w7D"/>
+                            <constraint firstItem="7nM-0y-Y05" firstAttribute="bottom" secondItem="KJv-IJ-o3t" secondAttribute="bottom" id="wMO-ta-J5g"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7nM-0y-Y05"/>
                     </view>
                     <connections>
+                        <outlet property="tabbar" destination="cfn-rr-yUa" id="mxx-We-yNy"/>
                         <outlet property="tableView" destination="KJv-IJ-o3t" id="Of9-Ab-gjm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YC0-r5-aFw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="725.60000000000002" y="117.39130434782609"/>
+            <point key="canvasLocation" x="2407" y="-86"/>
+        </scene>
+        <!--Master View Controller-->
+        <scene sceneID="tyh-48-dEd">
+            <objects>
+                <viewController id="Nhm-UH-6KQ" customClass="MasterViewController" customModule="Private_Concert" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rtF-pT-mTh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hex-9j-OYO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                            </containerView>
+                            <tabBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfn-rr-yUa">
+                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem image="headphones" selectedImage="headphones-selected" id="qCa-VV-bUx">
+                                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-9"/>
+                                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tabBarItem>
+                                    <tabBarItem tag="1" title="" image="heart" selectedImage="heart-selected" id="vcx-2d-zKN">
+                                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-10"/>
+                                    </tabBarItem>
+                                    <tabBarItem tag="2" title="" image="mic" selectedImage="mic-selected" id="Zmd-zc-4x3">
+                                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-8"/>
+                                    </tabBarItem>
+                                    <tabBarItem tag="3" image="userOutline" selectedImage="userOutline-selected" id="jIh-PC-acK">
+                                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-8"/>
+                                    </tabBarItem>
+                                </items>
+                                <color key="tintColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" red="0.92156862745098034" green="0.72941176470588232" blue="0.086274509803921567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Nhm-UH-6KQ" id="34J-YR-ogr"/>
+                                </connections>
+                            </tabBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cfn-rr-yUa" firstAttribute="leading" secondItem="r7h-QS-Ehs" secondAttribute="leading" id="1CA-M0-03u"/>
+                            <constraint firstItem="cfn-rr-yUa" firstAttribute="top" secondItem="hex-9j-OYO" secondAttribute="bottom" id="5fF-eC-ENE"/>
+                            <constraint firstItem="cfn-rr-yUa" firstAttribute="bottom" secondItem="r7h-QS-Ehs" secondAttribute="bottom" id="Bem-7I-uCz"/>
+                            <constraint firstItem="hex-9j-OYO" firstAttribute="leading" secondItem="r7h-QS-Ehs" secondAttribute="leading" id="Tca-rw-QXN"/>
+                            <constraint firstItem="hex-9j-OYO" firstAttribute="trailing" secondItem="r7h-QS-Ehs" secondAttribute="trailing" id="dzy-Sb-DWF"/>
+                            <constraint firstItem="hex-9j-OYO" firstAttribute="top" secondItem="rtF-pT-mTh" secondAttribute="top" id="gyP-PQ-R7k"/>
+                            <constraint firstItem="cfn-rr-yUa" firstAttribute="trailing" secondItem="r7h-QS-Ehs" secondAttribute="trailing" id="me8-Yh-fGM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="r7h-QS-Ehs"/>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="hex-9j-OYO" id="2Bn-aq-vNb"/>
+                        <outlet property="tabbar" destination="cfn-rr-yUa" id="FHL-9X-A0V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tOB-dY-Aau" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1621.5999999999999" y="126.38680659670166"/>
+        </scene>
+        <!--Record View Controller-->
+        <scene sceneID="gsV-8J-4Dy">
+            <objects>
+                <viewController storyboardIdentifier="RecordVC" id="IDZ-1S-5oF" customClass="RecordViewController" customModule="Private_Concert" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cpj-9z-pnH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhz-O9-1ti">
+                                <rect key="frame" x="164" y="299" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="click_AudioRecord:" destination="IDZ-1S-5oF" eventType="touchUpInside" id="Ecf-Gv-M6y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ug-2k-dDa">
+                                <rect key="frame" x="164" y="349" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="doPlay:" destination="IDZ-1S-5oF" eventType="touchUpInside" id="4Le-KW-zau"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="MJC-wa-U49"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnAudioRecord" destination="dhz-O9-1ti" id="ONY-9c-0Y1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yd1-gk-Rl8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2406" y="574"/>
         </scene>
     </scenes>
     <resources>
         <image name="Filter" width="22" height="14"/>
         <image name="Orange Triangle" width="25" height="29"/>
         <image name="Search" width="21" height="21"/>
+        <image name="SplashMic" width="104" height="251"/>
         <image name="User" width="28" height="28"/>
         <image name="downarrow" width="12" height="9"/>
         <image name="headphones" width="24" height="24"/>
@@ -417,4 +520,7 @@
         <image name="userOutline" width="21" height="23"/>
         <image name="userOutline-selected" width="21" height="23"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="YGI-Dn-C8S"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		539A59049159250EEF3D149C /* Pods_Private_Concert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9FCD2321E516AF7E642CB4A /* Pods_Private_Concert.framework */; };
+		E521A30F1FB5A2D400615A30 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E521A30E1FB5A2D400615A30 /* MasterViewController.swift */; };
+		E521A3111FB5B36C00615A30 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E521A3101FB5B36C00615A30 /* SplashViewController.swift */; };
 		E58009761FB2CBAE0084C803 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58009751FB2CBAE0084C803 /* AppDelegate.swift */; };
 		E58009781FB2CBAE0084C803 /* ListenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58009771FB2CBAE0084C803 /* ListenViewController.swift */; };
 		E580097B1FB2CBAE0084C803 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E58009791FB2CBAE0084C803 /* Main.storyboard */; };
@@ -16,11 +18,14 @@
 		E580098A1FB2E9C30084C803 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58009891FB2E9C30084C803 /* LoginViewController.swift */; };
 		E58FFEF71FB5445E00F95A18 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E58FFEF61FB5445E00F95A18 /* GoogleService-Info.plist */; };
 		E58FFEF91FB5772900F95A18 /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58FFEF81FB5772900F95A18 /* SongCell.swift */; };
+		E5F06CA11FB63D7500757746 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F06CA01FB63D7500757746 /* RecordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		312DE316697075B39133F419 /* Pods-Private Concert.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Private Concert.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Private Concert/Pods-Private Concert.debug.xcconfig"; sourceTree = "<group>"; };
 		D077AE1267874C59A307F5CF /* Pods-Private Concert.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Private Concert.release.xcconfig"; path = "Pods/Target Support Files/Pods-Private Concert/Pods-Private Concert.release.xcconfig"; sourceTree = "<group>"; };
+		E521A30E1FB5A2D400615A30 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		E521A3101FB5B36C00615A30 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		E58009721FB2CBAE0084C803 /* Private Concert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Private Concert.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E58009751FB2CBAE0084C803 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E58009771FB2CBAE0084C803 /* ListenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenViewController.swift; sourceTree = "<group>"; };
@@ -31,6 +36,7 @@
 		E58009891FB2E9C30084C803 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E58FFEF61FB5445E00F95A18 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E58FFEF81FB5772900F95A18 /* SongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCell.swift; sourceTree = "<group>"; };
+		E5F06CA01FB63D7500757746 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		F9FCD2321E516AF7E642CB4A /* Pods_Private_Concert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Private_Concert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -87,12 +93,15 @@
 				E58FFEF61FB5445E00F95A18 /* GoogleService-Info.plist */,
 				E58009751FB2CBAE0084C803 /* AppDelegate.swift */,
 				E58009771FB2CBAE0084C803 /* ListenViewController.swift */,
+				E5F06CA01FB63D7500757746 /* RecordViewController.swift */,
+				E521A30E1FB5A2D400615A30 /* MasterViewController.swift */,
 				E58FFEF81FB5772900F95A18 /* SongCell.swift */,
 				E58009891FB2E9C30084C803 /* LoginViewController.swift */,
 				E58009791FB2CBAE0084C803 /* Main.storyboard */,
 				E580097C1FB2CBAE0084C803 /* Assets.xcassets */,
 				E580097E1FB2CBAE0084C803 /* LaunchScreen.storyboard */,
 				E58009811FB2CBAE0084C803 /* Info.plist */,
+				E521A3101FB5B36C00615A30 /* SplashViewController.swift */,
 			);
 			path = "Private Concert";
 			sourceTree = "<group>";
@@ -236,6 +245,9 @@
 				E580098A1FB2E9C30084C803 /* LoginViewController.swift in Sources */,
 				E58FFEF91FB5772900F95A18 /* SongCell.swift in Sources */,
 				E58009781FB2CBAE0084C803 /* ListenViewController.swift in Sources */,
+				E5F06CA11FB63D7500757746 /* RecordViewController.swift in Sources */,
+				E521A3111FB5B36C00615A30 /* SplashViewController.swift in Sources */,
+				E521A30F1FB5A2D400615A30 /* MasterViewController.swift in Sources */,
 				E58009761FB2CBAE0084C803 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

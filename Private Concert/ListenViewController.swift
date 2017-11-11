@@ -16,11 +16,6 @@ class ListenViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         tableView.separatorStyle = .none
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
@@ -32,17 +27,17 @@ class ListenViewController: UIViewController, UITableViewDelegate, UITableViewDa
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "songCell", for: indexPath) as? SongCell
-            if (indexPath.row % 4 == 0) {
+            let row = indexPath.row % 4
+            if (row == 0) {
                 cell?.playButton.setImage(UIImage(named: "Magenta Triangle"), for: .normal)
-            } else if (indexPath.row % 3 == 0) {
+            } else if (row == 2) {
                 cell?.playButton.setImage(UIImage(named: "Blue Triangle"), for: .normal)
-            } else if (indexPath.row % 2 == 0) {
+            } else if (row == 3) {
                 cell?.playButton.setImage(UIImage(named: "Green Triangle"), for: .normal)
             }
             return cell!
         }
     }
-
 
 }
 

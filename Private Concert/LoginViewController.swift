@@ -36,18 +36,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     var validPassword = false
     var validConfirmPassword = false
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-        if let email = UserDefaults.standard.string(forKey: "Email") {
-            if let pass = UserDefaults.standard.string(forKey: "Pass") {
-                Auth.auth().signIn(withEmail: email, password: pass, completion: {(user, error) in
-                    self.performSegue(withIdentifier: "enterApp", sender: self)
-                })
-            }
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
