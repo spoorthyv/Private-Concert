@@ -90,20 +90,28 @@
 		E58009741FB2CBAE0084C803 /* Private Concert */ = {
 			isa = PBXGroup;
 			children = (
-				E58FFEF61FB5445E00F95A18 /* GoogleService-Info.plist */,
+				E58009791FB2CBAE0084C803 /* Main.storyboard */,
+				E580097E1FB2CBAE0084C803 /* LaunchScreen.storyboard */,
+				E580097C1FB2CBAE0084C803 /* Assets.xcassets */,
+				E5ABAC041FB82EDC00EC966A /* ViewControllers */,
 				E58009751FB2CBAE0084C803 /* AppDelegate.swift */,
+				E58FFEF81FB5772900F95A18 /* SongCell.swift */,
+				E58009811FB2CBAE0084C803 /* Info.plist */,
+				E58FFEF61FB5445E00F95A18 /* GoogleService-Info.plist */,
+			);
+			path = "Private Concert";
+			sourceTree = "<group>";
+		};
+		E5ABAC041FB82EDC00EC966A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
 				E58009771FB2CBAE0084C803 /* ListenViewController.swift */,
 				E5F06CA01FB63D7500757746 /* RecordViewController.swift */,
 				E521A30E1FB5A2D400615A30 /* MasterViewController.swift */,
-				E58FFEF81FB5772900F95A18 /* SongCell.swift */,
 				E58009891FB2E9C30084C803 /* LoginViewController.swift */,
-				E58009791FB2CBAE0084C803 /* Main.storyboard */,
-				E580097C1FB2CBAE0084C803 /* Assets.xcassets */,
-				E580097E1FB2CBAE0084C803 /* LaunchScreen.storyboard */,
-				E58009811FB2CBAE0084C803 /* Info.plist */,
 				E521A3101FB5B36C00615A30 /* SplashViewController.swift */,
 			);
-			path = "Private Concert";
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

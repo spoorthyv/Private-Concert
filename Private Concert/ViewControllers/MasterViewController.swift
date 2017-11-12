@@ -8,6 +8,10 @@
 
 import UIKit
 
+struct Global {
+    static var userEmail = ""
+}
+
 class MasterViewController: UIViewController, UITabBarDelegate {
 
     @IBOutlet weak var containerView: UIView!
@@ -16,6 +20,7 @@ class MasterViewController: UIViewController, UITabBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.currentViewController = self.storyboard?.instantiateViewController(withIdentifier: "ListenVC")
         self.currentViewController!.view.translatesAutoresizingMaskIntoConstraints = false
         self.addChildViewController(self.currentViewController!)
@@ -28,7 +33,6 @@ class MasterViewController: UIViewController, UITabBarDelegate {
             item.image = item.image?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         }
     }
-    
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         switch item.tag {
@@ -58,11 +62,11 @@ class MasterViewController: UIViewController, UITabBarDelegate {
         
         // TODO: Set the ending state of your constraints here
         
-        UIView.animate(withDuration: 0.5, animations: {
-                // only need to call layoutIfNeeded here
-                newViewController.view.layoutIfNeeded()
-            },
-            completion: { finished in
+        UIView.animate(
+            withDuration: 0.5,
+            animations: { newViewController.view.layoutIfNeeded() },
+            completion: {
+                finished in
                 oldViewController.view.removeFromSuperview()
                 oldViewController.removeFromParentViewController()
                 newViewController.didMove(toParentViewController: self)

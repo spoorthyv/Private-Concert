@@ -21,7 +21,12 @@ class SplashViewController: UIViewController {
             }
         }
         self.performSegue(withIdentifier: "toLoginVC", sender: self)
-        // Do any additional setup after loading the view.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.destination is MasterViewController) {
+            Global.userEmail = UserDefaults.standard.string(forKey: "Email")!
+        }
     }
 
 }

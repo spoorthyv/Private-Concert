@@ -41,8 +41,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         confirmPassTotalHeight = confirmPassTopConstraint.constant + confirmPassTopMargin.constant
         signInUnderline.isHidden = true
-//        NotificationCenter.default.addObserver(self, selector: Selector(("keyboardWillShow")), name:NSNotification.Name.UIKeyboardWillShow, object: self.view.window)
-//        NotificationCenter.default.addObserver(self, selector: Selector(("keyboardWillHide")), name:NSNotification.Name.UIKeyboardWillHide, object: self.view.window)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -178,29 +176,24 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if (isRegister) {
             Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: {(user, error) in
                 if (user != nil) {
-                    UserDefaults.standard.set(self.emailTextField.text!, forKey: "Email")
-                    UserDefaults.standard.set(self.passwordTextField.text!, forKey: "Pass")
-                    
                     self.performSegue(withIdentifier: "enterApp", sender: self)
                 }
             })
         } else {
             Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: {(user, error) in
                 if (user != nil) {
-                    UserDefaults.standard.set(self.emailTextField.text!, forKey: "Email")
-                    UserDefaults.standard.set(self.passwordTextField.text!, forKey: "Pass")
-                    
                     self.performSegue(withIdentifier: "enterApp", sender: self)
                 }
             })
         }
     }
     
-    func enterApp() {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        UserDefaults.standard.set(self.emailTextField.text!, forKey: "Email")
+        UserDefaults.standard.set(self.passwordTextField.text!, forKey: "Pass")
         
+        Global.userEmail = self.emailTextField.text!
     }
-    
-
     
     @objc func keyboardWillShow(sender: NSNotification) {
         //let userInfo: [NSObject : AnyObject] = sender.userInfo! as [NSObject : AnyObject]
@@ -222,31 +215,5 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let keyboardSize: CGSize = ((sender.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size)!
         self.view.frame.origin.y += keyboardSize.height
     }
-    
-//    @objc func keyboardWillShow(notification: NSNotification) {
-//        print("keyboard")
-//        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-//            if self.view.frame.origin.y == 0{
-//                self.view.frame.origin.y -= keyboardSize.height
-//            }
-//        }
-//    }
-//    @objc func keyboardWillHide(notification: NSNotification) {
-//        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-//            if self.view.frame.origin.y != 0{
-//                self.view.frame.origin.y += keyboardSize.height
-//            }
-//        }
-//    }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
