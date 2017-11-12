@@ -7,20 +7,31 @@
 //
 
 import UIKit
-import FirebaseAuth
+import Firebase
 
 class SplashViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         if let email = UserDefaults.standard.string(forKey: "Email") {
             if let pass = UserDefaults.standard.string(forKey: "Pass") {
                 Auth.auth().signIn(withEmail: email, password: pass, completion: {(user, error) in
-                    self.performSegue(withIdentifier: "toListenVC", sender: self)
+                    if (error == nil) {
+                        self.performSegue(withIdentifier: "toListenVC", sender: self)
+                    } else {
+                        self.performSegue(withIdentifier: "toLoginVC", sender: self)
+                        print(error.debugDescription)
+                    }
                 })
+            } else {
+                self.performSegue(withIdentifier: "toLoginVC", sender: self)
             }
+        } else {
+            self.performSegue(withIdentifier: "toLoginVC", sender: self)
         }
-        self.performSegue(withIdentifier: "toLoginVC", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -28,5 +39,4 @@ class SplashViewController: UIViewController {
             Global.userEmail = UserDefaults.standard.string(forKey: "Email")!
         }
     }
-
 }

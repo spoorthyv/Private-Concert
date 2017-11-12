@@ -28,6 +28,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
     var audioPlayer: AVAudioPlayer!
     
     let storage = Storage.storage()
+    let databaseUserRef = Firestore.firestore().collection("Users").document(Global.userEmail)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,7 +111,9 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
         playButton.isEnabled = false
         uploadButton.isEnabled = false
 
-        let storageRef = Storage.storage().reference(withPath: Global.userEmail + "/audio1.m4a")
+        let storageURL = Global.userEmail + "/audio1.m4a"
+        let storageRef = Storage.storage().reference(withPath: storageURL)
+        let databaseSongRef = databaseUserRef.collection("Songs").document("song1")
         
         let uploadTask = storageRef.putFile(from: audioRecorder.url)
 
@@ -119,6 +122,8 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
             self.uploadButton.titleLabel?.text = String(prog) + "%"
         }
         uploadTask.observe(.success) { snapshot in
+            let data: [String: Any] = ["URL": storageURL, "Tags": ["Tag 1", "Tag 2"], "Title": "Example Title"]
+            databaseSongRef.setData(data)
             self.recordButton.isEnabled = true
         }
     }

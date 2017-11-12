@@ -29,12 +29,21 @@
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashMic" translatesAutoresizingMaskIntoConstraints="NO" id="IXL-tc-8Uz">
                                 <rect key="frame" x="39" y="135" width="297" height="417"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBs-RG-cMP">
+                                <rect key="frame" x="164" y="582" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="login:" destination="OVX-MS-Pkz" eventType="touchUpInside" id="czV-ii-w1c"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.21176470588235294" green="0.25490196078431371" blue="0.48627450980392156" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="IXL-tc-8Uz" firstAttribute="centerY" secondItem="Nd3-Gv-3FB" secondAttribute="centerY" id="6vT-tQ-wLw"/>
+                            <constraint firstItem="HBs-RG-cMP" firstAttribute="top" secondItem="IXL-tc-8Uz" secondAttribute="bottom" constant="30" id="Opg-NR-OA6"/>
                             <constraint firstItem="IXL-tc-8Uz" firstAttribute="top" secondItem="Nd3-Gv-3FB" secondAttribute="top" constant="115" id="UBM-9G-ScJ"/>
                             <constraint firstItem="Nd3-Gv-3FB" firstAttribute="bottom" secondItem="IXL-tc-8Uz" secondAttribute="bottom" constant="115" id="XdT-ua-35X"/>
+                            <constraint firstItem="HBs-RG-cMP" firstAttribute="centerX" secondItem="IXL-tc-8Uz" secondAttribute="centerX" id="dEj-DD-gra"/>
                             <constraint firstItem="IXL-tc-8Uz" firstAttribute="leading" secondItem="Nd3-Gv-3FB" secondAttribute="leading" constant="39" id="fFc-Zg-D62"/>
                             <constraint firstItem="Nd3-Gv-3FB" firstAttribute="trailing" secondItem="IXL-tc-8Uz" secondAttribute="trailing" constant="39" id="kgN-G7-aoJ"/>
                         </constraints>
@@ -523,7 +532,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yd1-gk-Rl8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2405.5999999999999" y="573.46326836581716"/>
+            <point key="canvasLocation" x="2406" y="582"/>
+        </scene>
+        <!--User View Controller-->
+        <scene sceneID="0gG-OB-3Zr">
+            <objects>
+                <viewController storyboardIdentifier="UserVC" id="FaQ-iN-7ri" customClass="UserViewController" customModule="Private_Concert" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qzv-hN-w2N">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8U-Rr-8Oi">
+                                <rect key="frame" x="163" y="318" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="log out"/>
+                                <connections>
+                                    <action selector="logOut:" destination="FaQ-iN-7ri" eventType="touchUpInside" id="WpX-l7-7RB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="YUp-Pf-tZM"/>
+                    </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="logOut" id="fUi-N1-cem"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hd7-8E-7Ff" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2406" y="1284"/>
         </scene>
     </scenes>
     <resources>
@@ -546,5 +583,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="YGI-Dn-C8S"/>
+        <segue reference="QeI-I5-gSF"/>
     </inferredMetricsTieBreakers>
 </document>

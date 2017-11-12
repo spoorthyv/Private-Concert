@@ -18,6 +18,7 @@
 		E580098A1FB2E9C30084C803 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58009891FB2E9C30084C803 /* LoginViewController.swift */; };
 		E58FFEF71FB5445E00F95A18 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E58FFEF61FB5445E00F95A18 /* GoogleService-Info.plist */; };
 		E58FFEF91FB5772900F95A18 /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58FFEF81FB5772900F95A18 /* SongCell.swift */; };
+		E5ABAC061FB8545D00EC966A /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ABAC051FB8545D00EC966A /* UserViewController.swift */; };
 		E5F06CA11FB63D7500757746 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F06CA01FB63D7500757746 /* RecordViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		E58009891FB2E9C30084C803 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E58FFEF61FB5445E00F95A18 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E58FFEF81FB5772900F95A18 /* SongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCell.swift; sourceTree = "<group>"; };
+		E5ABAC051FB8545D00EC966A /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		E5F06CA01FB63D7500757746 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		F9FCD2321E516AF7E642CB4A /* Pods_Private_Concert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Private_Concert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				E58009771FB2CBAE0084C803 /* ListenViewController.swift */,
+				E5ABAC051FB8545D00EC966A /* UserViewController.swift */,
 				E5F06CA01FB63D7500757746 /* RecordViewController.swift */,
 				E521A30E1FB5A2D400615A30 /* MasterViewController.swift */,
 				E58009891FB2E9C30084C803 /* LoginViewController.swift */,
@@ -193,15 +196,27 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Private Concert/Pods-Private Concert-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -251,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E580098A1FB2E9C30084C803 /* LoginViewController.swift in Sources */,
+				E5ABAC061FB8545D00EC966A /* UserViewController.swift in Sources */,
 				E58FFEF91FB5772900F95A18 /* SongCell.swift in Sources */,
 				E58009781FB2CBAE0084C803 /* ListenViewController.swift in Sources */,
 				E5F06CA11FB63D7500757746 /* RecordViewController.swift in Sources */,

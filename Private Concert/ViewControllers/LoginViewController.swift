@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FirebaseAuth
+import Firebase
 import Foundation
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
@@ -36,6 +36,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     var validPassword = false
     var validConfirmPassword = false
     
+    var userCollectionRef = Firestore.firestore().collection("Users")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,6 +51,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
     
     @IBAction func registerClicked(_ sender: UIButton) {
         if (!isRegister) {
@@ -176,6 +179,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if (isRegister) {
             Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: {(user, error) in
                 if (user != nil) {
+                    //let data: [String: Any] = ["votes":, "songs":]
+                    let data: [String: Any] = [:]
+                    self.userCollectionRef.document(self.emailTextField.text!).setData(data)
                     self.performSegue(withIdentifier: "enterApp", sender: self)
                 }
             })
