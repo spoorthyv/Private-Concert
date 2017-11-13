@@ -41,7 +41,7 @@ class MasterViewController: UIViewController, UITabBarDelegate {
                 newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
                 self.cycleFromViewController(oldViewController: self.currentViewController!, toViewController: newViewController!)
                 self.currentViewController = newViewController
-            case 1:
+            case 2:
                 let newViewController = self.storyboard?.instantiateViewController(withIdentifier: "RecordVC")
                 newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
                 self.cycleFromViewController(oldViewController: self.currentViewController!, toViewController: newViewController!)

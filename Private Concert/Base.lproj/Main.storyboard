@@ -29,21 +29,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashMic" translatesAutoresizingMaskIntoConstraints="NO" id="IXL-tc-8Uz">
                                 <rect key="frame" x="39" y="135" width="297" height="417"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBs-RG-cMP">
-                                <rect key="frame" x="164" y="582" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="login:" destination="OVX-MS-Pkz" eventType="touchUpInside" id="czV-ii-w1c"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.21176470588235294" green="0.25490196078431371" blue="0.48627450980392156" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="IXL-tc-8Uz" firstAttribute="centerY" secondItem="Nd3-Gv-3FB" secondAttribute="centerY" id="6vT-tQ-wLw"/>
-                            <constraint firstItem="HBs-RG-cMP" firstAttribute="top" secondItem="IXL-tc-8Uz" secondAttribute="bottom" constant="30" id="Opg-NR-OA6"/>
                             <constraint firstItem="IXL-tc-8Uz" firstAttribute="top" secondItem="Nd3-Gv-3FB" secondAttribute="top" constant="115" id="UBM-9G-ScJ"/>
                             <constraint firstItem="Nd3-Gv-3FB" firstAttribute="bottom" secondItem="IXL-tc-8Uz" secondAttribute="bottom" constant="115" id="XdT-ua-35X"/>
-                            <constraint firstItem="HBs-RG-cMP" firstAttribute="centerX" secondItem="IXL-tc-8Uz" secondAttribute="centerX" id="dEj-DD-gra"/>
                             <constraint firstItem="IXL-tc-8Uz" firstAttribute="leading" secondItem="Nd3-Gv-3FB" secondAttribute="leading" constant="39" id="fFc-Zg-D62"/>
                             <constraint firstItem="Nd3-Gv-3FB" firstAttribute="trailing" secondItem="IXL-tc-8Uz" secondAttribute="trailing" constant="39" id="kgN-G7-aoJ"/>
                         </constraints>
@@ -359,6 +350,9 @@
                                                         <constraint firstAttribute="height" constant="45" id="tKe-uY-xU3"/>
                                                     </constraints>
                                                     <state key="normal" image="Orange Triangle"/>
+                                                    <connections>
+                                                        <action selector="playButtonClicked:" destination="7g0-fy-2vG" eventType="touchUpInside" id="fX4-By-GYK"/>
+                                                    </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kkw-ra-Wgu">
                                                     <rect key="frame" x="0.0" y="67" width="375" height="1"/>
@@ -503,10 +497,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rrk-qj-bTV">
-                                <rect key="frame" x="114" y="381" width="146" height="30"/>
+                                <rect key="frame" x="114" y="381" width="146" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="146" id="ysJ-DW-0JN"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Upload"/>
                                 <connections>
                                     <action selector="uploadSong:" destination="IDZ-1S-5oF" eventType="touchUpInside" id="rxk-DB-d3b"/>

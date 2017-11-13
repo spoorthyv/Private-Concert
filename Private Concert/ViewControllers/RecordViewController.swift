@@ -111,9 +111,15 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
         playButton.isEnabled = false
         uploadButton.isEnabled = false
 
-        let storageURL = Global.userEmail + "/audio1.m4a"
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy-HH-mm-ss"
+        let songTitle = formatter.string(from: date) + ".m4a"
+        
+        
+        let storageURL = Global.userEmail + "/" + songTitle
         let storageRef = Storage.storage().reference(withPath: storageURL)
-        let databaseSongRef = databaseUserRef.collection("Songs").document("song1")
+        let databaseSongRef = databaseUserRef.collection("Songs").document(songTitle)
         
         let uploadTask = storageRef.putFile(from: audioRecorder.url)
 
@@ -122,7 +128,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
             self.uploadButton.titleLabel?.text = String(prog) + "%"
         }
         uploadTask.observe(.success) { snapshot in
-            let data: [String: Any] = ["URL": storageURL, "Tags": ["Tag 1", "Tag 2"], "Title": "Example Title"]
+            let data: [String: Any] = ["URL": storageURL, "Tags": ["Tag 1", "Tag 2"], "Title": songTitle]
             databaseSongRef.setData(data)
             self.recordButton.isEnabled = true
         }
