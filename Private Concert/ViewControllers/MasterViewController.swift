@@ -26,13 +26,26 @@ class MasterViewController: UIViewController, UITabBarDelegate {
         self.addChildViewController(self.currentViewController!)
         self.addSubview(subView: self.currentViewController!.view, toView: self.containerView)
         tabbar.selectedItem = tabbar.items![0]
+                
+        // corner radius
+        containerView.subviews[0].layer.cornerRadius = 10
+        //containerView.subviews.clipsToBounds = true
         
-        //tabbar.tintColor = UIColor.white
+        // shadow
+        
+        containerView.subviews[0].layer.shadowColor = UIColor.black.cgColor
+        containerView.subviews[0].layer.shadowOffset = CGSize(width: 3, height: 3)
+        containerView.subviews[0].layer.shadowOpacity = 0.7
+        containerView.subviews[0].layer.shadowRadius = 10
         
         for item in tabbar.items! {
             item.image = item.image?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         }
+        
+        containerView.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 14)
+        containerView.dropShadow(color: UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.57), offSet: CGSize(width: 0, height: 0), radius: 4, scale: true)
     }
+    
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         switch item.tag {
@@ -89,3 +102,27 @@ class MasterViewController: UIViewController, UITabBarDelegate {
     }
     
 }
+
+extension UIView {
+
+    func roundCorners(corners:UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        self.layer.mask = mask
+        self.layer.masksToBounds = true
+    }
+
+    func dropShadow(color: UIColor, opacity: Float = 0.5, offSet: CGSize, radius: CGFloat = 1, scale: Bool = true) {
+        self.layer.masksToBounds = false
+        self.layer.shadowColor = color.cgColor
+        self.layer.shadowOpacity = opacity
+        self.layer.shadowOffset = offSet
+        self.layer.shadowRadius = radius
+
+        self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
+        self.layer.shouldRasterize = true
+        self.layer.rasterizationScale = scale ? UIScreen.main.scale : 1
+    }
+}
+

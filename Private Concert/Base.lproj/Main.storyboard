@@ -418,25 +418,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hex-9j-OYO">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                            </containerView>
                             <tabBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfn-rr-yUa">
                                 <rect key="frame" x="0.0" y="618" width="375" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <tabBarItem image="headphones" selectedImage="headphones-selected" id="qCa-VV-bUx">
-                                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-9"/>
+                                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-8"/>
                                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tabBarItem>
                                     <tabBarItem tag="1" title="" image="heart" selectedImage="heart-selected" id="vcx-2d-zKN">
-                                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-10"/>
+                                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-9"/>
                                     </tabBarItem>
                                     <tabBarItem tag="2" title="" image="mic" selectedImage="mic-selected" id="Zmd-zc-4x3">
-                                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-8"/>
+                                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-7"/>
                                     </tabBarItem>
                                     <tabBarItem tag="3" image="userOutline" selectedImage="userOutline-selected" id="jIh-PC-acK">
-                                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-8"/>
+                                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-7"/>
                                     </tabBarItem>
                                 </items>
                                 <color key="tintColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -446,15 +443,40 @@
                                     <outlet property="delegate" destination="Nhm-UH-6KQ" id="34J-YR-ogr"/>
                                 </connections>
                             </tabBar>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ad-Vp-bj7">
+                                <rect key="frame" x="0.0" y="602" width="375" height="17"/>
+                                <color key="backgroundColor" red="0.92264866828918457" green="0.73026925325393677" blue="0.08622673898935318" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="yaS-JA-ycQ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hex-9j-OYO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
+                                <color key="backgroundColor" red="0.93009072542190552" green="0.76202154159545898" blue="0.083457909524440765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="cfn-rr-yUa" firstAttribute="leading" secondItem="r7h-QS-Ehs" secondAttribute="leading" id="1CA-M0-03u"/>
-                            <constraint firstItem="cfn-rr-yUa" firstAttribute="top" secondItem="hex-9j-OYO" secondAttribute="bottom" id="5fF-eC-ENE"/>
+                            <constraint firstItem="cfn-rr-yUa" firstAttribute="top" secondItem="hex-9j-OYO" secondAttribute="bottom" constant="1" id="5fF-eC-ENE"/>
                             <constraint firstItem="cfn-rr-yUa" firstAttribute="bottom" secondItem="r7h-QS-Ehs" secondAttribute="bottom" id="Bem-7I-uCz"/>
+                            <constraint firstItem="cfn-rr-yUa" firstAttribute="top" secondItem="2Ad-Vp-bj7" secondAttribute="bottom" constant="-1" id="Dgl-Vq-8HD"/>
+                            <constraint firstItem="r7h-QS-Ehs" firstAttribute="trailing" secondItem="2Ad-Vp-bj7" secondAttribute="trailing" id="QCv-ag-mlH"/>
                             <constraint firstItem="hex-9j-OYO" firstAttribute="leading" secondItem="r7h-QS-Ehs" secondAttribute="leading" id="Tca-rw-QXN"/>
                             <constraint firstItem="hex-9j-OYO" firstAttribute="trailing" secondItem="r7h-QS-Ehs" secondAttribute="trailing" id="dzy-Sb-DWF"/>
                             <constraint firstItem="hex-9j-OYO" firstAttribute="top" secondItem="rtF-pT-mTh" secondAttribute="top" id="gyP-PQ-R7k"/>
+                            <constraint firstItem="2Ad-Vp-bj7" firstAttribute="leading" secondItem="r7h-QS-Ehs" secondAttribute="leading" id="k58-SR-ZM1"/>
                             <constraint firstItem="cfn-rr-yUa" firstAttribute="trailing" secondItem="r7h-QS-Ehs" secondAttribute="trailing" id="me8-Yh-fGM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="r7h-QS-Ehs"/>
